@@ -8,7 +8,7 @@ use App\Http\Controllers\UserAccountController;
 
  
 Route::get('/',[IndexController::class, 'index']);
-Route::get('/hello',[IndexController::class, 'hello'])->middleware('auth');
+// Route::get('/hello',[IndexController::class, 'hello'])->middleware('auth');
 
 
 Route::resource('listing',ListingController::class);
