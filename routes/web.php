@@ -24,3 +24,8 @@ Route::resource('user-account',UserAccountController::class)->only(['create', 's
 // please delete this
 // please delete this
 // please delete this
+// please delete this
+// please delete this
+// please delete this
+// please delete this
+// please delete this
