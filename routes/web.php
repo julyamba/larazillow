@@ -8,7 +8,7 @@ use App\Http\Controllers\UserAccountController;
 
  
 Route::get('/',[IndexController::class, 'index']);
-// Route::get('/hello',[IndexController::class, 'hello'])->middleware('auth');
+Route::get('/hello',[IndexController::class, 'hello'])->middleware('auth');
 
 
 Route::resource('listing',ListingController::class);
@@ -18,24 +18,3 @@ Route::post('login',[AuthController::class, 'store'])->name('login.store');
 Route::delete('logout',[AuthController::class, 'destroy'])->name('logout');
 
 Route::resource('user-account',UserAccountController::class)->only(['create', 'store']);
-
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
-// please delete this
