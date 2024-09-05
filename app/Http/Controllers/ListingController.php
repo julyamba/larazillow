@@ -22,7 +22,7 @@ class ListingController extends Controller
     public function index()
     {
         return Inertia::render('Listing/Index',[
-            'listings' => Listing::all()->latest()
+            'listings' => Listing::latest()->paginate(9)
         ]);
     }
 
