@@ -21,12 +21,17 @@ class ListingController extends Controller
      */
     public function index()
     {
+        $filters = request()->only([
+            'priceFrom','priceTo','beds','baths','areaFrom','areaTo'
+        ]);
+
         return Inertia::render('Listing/Index',
         [
-            'filters' => request()->only([
-                'priceFrom','priceTo','beds','baths','areaFrom','areaTo'
-            ]),
-            'listings' => Listing::latest()->paginate(9)->withQueryString()
+            'filters' => $filters,
+            'listings' => Listing::latest()
+                ->filter($filters)
+                ->paginate(9)
+                ->withQueryString()
         ]);
     }
 
