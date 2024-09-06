@@ -28,10 +28,10 @@
     }
 
     .btn-normal {
-        @apply bg-gray-600 hover:bg-gray-500 text-white font-medium p-2 rounded-md
+        @apply bg-gray-600 hover:bg-gray-500 text-white font-medium px-2 py-1 rounded-md
     }
 
     .btn-primary {
-        @apply bg-indigo-600 hover:bg-indigo-500 text-white font-medium p-2 rounded-md
+        @apply bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-2 py-1 rounded-md
     }
 }
