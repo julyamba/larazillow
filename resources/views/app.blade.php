@@ -6,13 +6,19 @@
 
         <title>Larazillow</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap"
+            rel="stylesheet">
         
         @routes()
         @vite('resources/js/app.js')
         @vite('resources/css/app.css')
         @inertiaHead
     </head>
-    <body class=" bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300">
+    <body class=" bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300 font-hanken-grotesk">
         @inertia
     </body>
 </html>

@@ -1,12 +1,16 @@
 
-module.exports = {
+export default {
   content: [
     './storage/framework/views/*.php',
     './resources/views/**/*.blade.php',
     './resources/js/**/*.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+          "hanken-grotesk": ["Hanken Grotesk", "sans-serif"],
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),
