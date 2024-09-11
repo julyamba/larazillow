@@ -9,15 +9,9 @@ use App\Http\Controllers\RealtorListingController;
 
  
 Route::get('/',[IndexController::class, 'index']);
-// Route::get('/hello',[IndexController::class, 'hello'])->middleware('auth');
-
 
 Route::resource('listing',ListingController::class)
-->only(['create','store','edit','update'])
-->middleware('auth');
-
-Route::resource('listing',ListingController::class)
-->except(['create','store','edit','update','destroy']);
+->only(['index','show']);
 
 Route::get('login',[AuthController::class, 'create'])->name('login');
 Route::post('login',[AuthController::class, 'store'])->name('login.store');
@@ -30,5 +24,5 @@ Route::prefix('realtor')
 ->middleware('auth')
 ->group(function () {
     Route::resource('listing',RealtorListingController::class)
-    ->only(['index','destroy']);
+    ->only(['index','destroy','edit','update','create','store']);
 });
