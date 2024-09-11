@@ -25,7 +25,7 @@
             </div>
 
             <button type="submit" class="btn-normal px-5">Filter</button>
-            <button type="reset" @click="clear" class="ml-2">Clear</button>
+            <button type="reset" @click="clear" class="px-3 btn-outline">Clear</button>
         </div>
     </form>
 </template>

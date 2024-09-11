@@ -17,15 +17,21 @@
                     <ListingAddress :list="listing" class="text-gray-500"/>
                 </div>
 
-                <div class="flex items-center gap-1 text-gray-600 dark:text-gray-300">
-                    <a v-if="!listing.deleted_at" target="_blank" class="btn-outline text-xs font-medium cursor-pointer" :href="route('listing.show', {listing})">Preview</a>
+                <section>
+                    <div class="flex items-center gap-1 text-gray-600 dark:text-gray-300">
+                        <a v-if="!listing.deleted_at" target="_blank" class="btn-outline text-xs font-medium cursor-pointer" :href="route('listing.show', {listing})">Preview</a>
 
-                    <Link class="btn-outline text-xs font-medium" :href="route('realtor.listing.edit',{listing})">Edit</Link>
+                        <Link class="btn-outline text-xs font-medium" :href="route('realtor.listing.edit',{listing})">Edit</Link>
 
-                    <Link v-if="!listing.deleted_at" class="btn-outline text-xs font-medium" :href="route('realtor.listing.destroy', {listing})" as="button" method="delete">Delete</Link>
+                        <Link v-if="!listing.deleted_at" class="btn-outline text-xs font-medium" :href="route('realtor.listing.destroy', {listing})" as="button" method="delete">Delete</Link>
 
-                    <Link v-else class="btn-outline text-xs font-medium" :href="route('realtor.listing.restore', {listing})" as="button" method="put">Restore</Link>
-                </div>
+                        <Link v-else class="btn-outline text-xs font-medium" :href="route('realtor.listing.restore', {listing})" as="button" method="put">Restore</Link>
+                    </div>
+
+                    <div class="mt-2">
+                        <Link :href="route('realtor.listing.image.create', {listing})" class="block w-full btn-outline text-xs font-medium text-center">Image</Link>
+                    </div>
+                </section>
             </div>
         </Box>
     </section>
