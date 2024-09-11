@@ -56,7 +56,7 @@ class Listing extends Model
             )
             ->when(
                 $filters['deleted'] ?? false,
-                fn ($query, $value) => $query->withTrashed()
+                fn ($query, $value) => $query->onlyTrashed()
             )
             ->when(
                 $filters['by'] ?? false,

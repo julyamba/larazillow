@@ -4,7 +4,7 @@
         <Listing v-for="list in listings.data" :key="list.id" :listing="list" />
     </div>  
 
-    <div v-if="listings.data.length" class="w-full flex justify-center my-8">
+    <div v-if="listings.data.length" class="w-full flex my-8">
         <Pagination :links="listings.links" />
     </div>
 </template>

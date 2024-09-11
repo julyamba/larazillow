@@ -23,6 +23,12 @@ Route::prefix('realtor')
 ->name('realtor.')
 ->middleware('auth')
 ->group(function () {
+    // additional route aside from RESOURCE
+    // && must on top on resource
+    // add ->withTrashed() so that it will not return 404 error.
+    Route::name('listing.restore')->put('listing/{listing}/restore',[RealtorListingController::class, 'restore'])->withTrashed();
+
     Route::resource('listing',RealtorListingController::class)
-    ->only(['index','destroy','edit','update','create','store']);
+    ->only(['index','destroy','edit','update','create','store'])
+    ->withTrashed();
 });
