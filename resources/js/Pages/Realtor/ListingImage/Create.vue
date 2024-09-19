@@ -7,7 +7,10 @@
 
                 <button type="submit" class="btn-outline disabled:opacity-25 disabled:cursor-not-allowed" :disabled="!canUpload">Upload</button>
                 <button type="reset" class="btn-outline" @click="reset">Reset</button>
-            </section>            
+            </section>  
+            <div v-if="imageErrors.length" class="input-error">
+                <div v-for="(error,index) in imageErrors" :key="index">File {{ index+1 }} : {{ error }}</div>
+            </div>          
         </form>
     </Box>    
 
@@ -33,13 +36,18 @@ const form = useForm({
     images: []
 })
 
+const imageErrors = computed(() => Object.values(form.errors))
+
 const canUpload = computed(() => form.images.length)
 
 const upload = () => {
     form.post(
         route('realtor.listing.image.store', {listing: props.listing.id}),
         {
-            onSuccess: () => form.reset('images'),
+            onSuccess: () => {
+                form.reset('images')
+                form.clearErrors()
+            }
         }
     )
 }
@@ -50,5 +58,8 @@ const addFiles = (event) => {
     }
 }
 
-const reset = () => form.reset('images')
+const reset = () => {
+    form.reset('images')
+    form.clearErrors()
+}
 </script>

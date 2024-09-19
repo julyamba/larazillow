@@ -23,7 +23,7 @@ class ListingController extends Controller
         return Inertia::render('Listing/Index',
         [
             'filters' => $filters,
-            'listings' => Listing::latest()
+            'listings' => Listing::latest()                
                 ->filter($filters)
                 ->paginate(9)
                 ->withQueryString()
@@ -32,6 +32,7 @@ class ListingController extends Controller
 
     public function show(Listing $listing)
     {
+        $listing->load(['images']);
         return Inertia::render('Listing/Show',[
             'list' => $listing
         ]);

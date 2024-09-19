@@ -29,7 +29,9 @@
                     </div>
 
                     <div class="mt-2">
-                        <Link :href="route('realtor.listing.image.create', {listing})" class="block w-full btn-outline text-xs font-medium text-center">Image</Link>
+                        <Link :href="route('realtor.listing.image.create', {listing})" class="block w-full btn-outline text-xs font-medium text-center">
+                            Image <span v-if="listing.images_count">({{listing.images_count}})</span>
+                        </Link>
                     </div>
                 </section>
             </div>
